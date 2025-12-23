@@ -30,3 +30,23 @@ console.log(counter1()); // 3
  * 
  * This is a classic example of how closures can be used to create private variables.
  */
+
+
+
+// it also maintain the encapsulation and data privacity
+
+function bankAccount(){
+    let balance = 0;
+    return {
+        deposite(amount){
+            balance += amount;
+        },
+        checkBalance(){
+            return balance;
+        }
+    }
+}
+
+const account = bankAccount();
+account.deposite(100);
+console.log(account.checkBalance());
