@@ -50,3 +50,22 @@ function bankAccount(){
 const account = bankAccount();
 account.deposite(100);
 console.log(account.checkBalance());
+
+// you can not directly access balance, cox of closure. you will get undefine
+
+
+
+// functuon facotory
+// Same logic, different behavior
+// Very common in React hooks & utilities
+
+function makeAdder(x)
+{
+    return (y)=> x+y;
+}
+
+const add5 = makeAdder(5);
+
+console.log(typeof(add5));
+
+console.log(add5(2));
